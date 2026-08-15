@@ -1,0 +1,21 @@
+schema: mcpg.dev/plugin/v1
+id: dev.mcpg.audit.s3-worm
+name: S3 Object-Lock (WORM) Audit Sink
+license: BUSL-1.1
+description: |
+  An audit_sink that persists every audit event as an immutable S3
+  object under Object Lock — write-once-read-many compliance storage
+  for SOC2 / HIPAA / PCI-DSS. Each event is one JSON object keyed by
+  its event_id, written with an Object-Lock retention header
+  (governance or compliance mode, retain_until = now + retention_days)
+  that S3 enforces: the object cannot be overwritten or deleted before
+  the retention date. emit returns Ok only after PutObject durably
+  completes (the synchronous-ack audit contract); the receipt carries
+  the SHA-256 over the exact stored bytes. The bucket must already
+  exist with Object Lock enabled. Works against AWS S3 or any S3-API
+  service supporting Object Lock.
+class: audit_sink
+runtime: native-cdylib-v1
+protocol_version: "1.0"
+required_capabilities:
+  - network_outbound
