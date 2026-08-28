@@ -1,6 +1,6 @@
 [package]
 name = "mcpg-plugin-audit-s3-worm"
-version = "0.1.0-alpha.16"
+version = "0.1.0-alpha.18"
 license = "BUSL-1.1"
 edition = "2024"
 description = "S3 Object-Lock (WORM) compliance audit_sink plugin for MCPG — immutable, retained audit events"
@@ -9,8 +9,8 @@ description = "S3 Object-Lock (WORM) compliance audit_sink plugin for MCPG — i
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-mcpg-plugin-protocol = { git = "https://github.com/mcpg-dev/mcpg-plugin-protocol", tag = "v0.1.0-beta.14", version = "=0.1.0-beta.14" }
-mcpg-plugin-sdk = { git = "https://github.com/mcpg-dev/mcpg-plugin-sdk", tag = "v0.1.0-beta.14", version = "=0.1.0-beta.14" }
+mcpg-plugin-protocol = { git = "https://github.com/mcpg-dev/mcpg-plugin-protocol", tag = "v0.1.0-beta.16", version = "=0.1.0-beta.16" }
+mcpg-plugin-sdk = { git = "https://github.com/mcpg-dev/mcpg-plugin-sdk", tag = "v0.1.0-beta.16", version = "=0.1.0-beta.16" }
 async-trait = "0.1"
 chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
 hex = "0.4"
