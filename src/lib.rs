@@ -249,6 +249,7 @@ mod tests {
             resource: Some("tool://payments.charge".into()),
             outcome: AuditOutcome::Denied,
             request_id: Some("req-1".into()),
+            upstream_request_id: None,
             node_id: None,
             details: json!({"reason": "rate_limit"}),
             prev_event_hash: None,
