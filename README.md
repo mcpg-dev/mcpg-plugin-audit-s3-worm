@@ -85,7 +85,7 @@ bytes hash to the receipt + the object carries a retention header:
 cargo test -p mcpg-plugin-audit-s3-worm --features integration-tests --test integration
 ```
 
-(needs Docker; runs in the `--config=integration` CI lane.)
+(needs Docker; the suite starts `localstack/localstack:4.14.0`.)
 
 ## Notes
 
